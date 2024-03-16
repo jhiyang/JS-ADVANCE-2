@@ -118,17 +118,17 @@ btnClearItems.addEventListener("click", () =>
 {
     arrRecords = [];
 
+    localStorage.removeItem("records");
+
     while(tblRecords.hasChildNodes()) 
     {
         tblRecords.removeChild(tblRecords.firstChild);
     }
-
-    document.getElementById("status").style.display = "inline";
+    ddocument.getElementById("status").style.display = "inline";
     document.getElementById("status").innerHTML = "No Records...";
 
     btnInsertUpdate.innerHTML = "Insert";
     btnInsertUpdate.value = "insert";
-
 });
 
 document.getElementById("sorting").addEventListener("change", sortRecords);
