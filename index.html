@@ -6,9 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript 2</title>
     <style>
-        body 
-        {
+        body {
             font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bbutton-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .button-container button,
+        .button-container select {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -64,27 +74,28 @@
 
     <fieldset>
         <legend>Records</legend>
-        <p id="status" style="color:red; font-size: 12px;"></p>
+        <p id="status" style="color:red; font-size: 12px;">No Records...</p>
         <table id="tblRecords" style="border-collapse: collapse; margin: auto;">
         </table>
     </fieldset>
 
-    <button id="btnClearItems" style="margin-top: 10px;">Clear Records</button>
-
-    <label for="sorting" id="sortLabel">Sort by:</label>
-    <select id="sorting" onchange="hidePlaceholder()">
-        <option value="" disabled selected hidden>Please select</option>
-        <option value="firstName">First Name</option>
-        <option value="lastName">Last Name</option>
-    </select>
-    <select name="sort" id="a-z" onchange="hidePlaceholder()">
-        <option value="" disabled selected hidden>Please select</option>
-        <option value="aTxt"> A - Z</option>
-        <option value="zTxt"> Z - A</option>
-    </select>
-
-    <button id="btnSave"> Save to Local Storage</button>
-
+    <div style="display: flex; align-items: center;">
+        <button id="btnClearItems">Clear Records</button>
+        <div class="button-container">
+            <label for="sorting" id="sortLabel">Sort by:</label>
+            <select id="sorting" onchange="sortRecords()">
+                <option value="" disabled selected hidden>Please select</option>
+                <option value="firstName">First Name</option>
+                <option value="lastName">Last Name</option>
+            </select>
+            <select name="sort" id="a-z" onchange="sortRecords()">
+                <option value="" disabled selected hidden>Please select</option>
+                <option value="aTxt">A - Z</option>
+                <option value="zTxt">Z - A</option>
+            </select>
+            <button id="btnSave">Save to Local Storage</button>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
